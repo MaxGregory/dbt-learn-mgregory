@@ -1,3 +1,12 @@
+{{config
+
+    (
+        materialized = 'table'
+    )
+
+}}
+
+
 with Orders as (
 
     select * from {{ ref('stg_orders') }}
@@ -29,7 +38,8 @@ Final AS(
         O.customer_id,
         O.order_id,
         O.status,
-        OP.Amount
+        OP.Amount,
+        O.order_date
     FROM 
         Orders O
         LEFT JOIN Order_Payments OP 
