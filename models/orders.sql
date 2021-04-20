@@ -1,7 +1,8 @@
 {{config
 
     (
-        materialized = 'table'
+        materialized = 'table',
+        tags = ["test"]
     )
 
 }}
@@ -26,7 +27,7 @@ Order_Payments AS(
         order_id
     FROM Payments
     WHERE
-        Status <> 'FAIL'
+        Status <> 'fail'
     Group BY
         order_id
 
