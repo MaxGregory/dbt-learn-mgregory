@@ -6,5 +6,4 @@ SELECT
     Status,
     Created AS Created_At,
     _Batched_At
-FROM 
-    raw.stripe.payment 
+FROM {{ source('stripe', 'payment') }}
