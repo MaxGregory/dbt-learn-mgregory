@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: customers
+    description: customers target table
     columns:
       - name: customer_id
         tests:
@@ -9,8 +10,10 @@ models:
           - not_null
 
   - name: stg_customers
+    description: pulling from raw customers data
     columns:
       - name: customer_id
+        description: customersID column, unique and not null
         tests:
           - unique
           - not_null
